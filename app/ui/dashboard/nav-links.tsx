@@ -38,8 +38,10 @@ export default function NavLinks() {
               },
             )}
           >
-            <LinkIcon className="w-5" />
-            <p className="hidden md:block">{link.name}</p>
+            <LinkIcon className="w-6" />
+            <p className="hidden md:block" style={{ fontSize: '1.2vw' }}>
+              {link.name}
+            </p>
           </Link>
         );
       })}
