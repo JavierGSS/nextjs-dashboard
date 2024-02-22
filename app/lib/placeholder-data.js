@@ -185,7 +185,6 @@ const revenue = [
   { month: 'Oct', revenue: 2800 },
   { month: 'Nov', revenue: 3000 },
   { month: 'Dec', revenue: 4800 },
-  { month: 'Janu', revenue: 2600 },
 ];
 
 module.exports = {
