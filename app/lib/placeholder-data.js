@@ -72,6 +72,13 @@ const customers = [
   },
 ];
 
+const admin = [
+  {
+    id: '3958dc9e-712f-4377-85e9-fec4b6a6442a',
+    name: 'JavierGSS',
+  },
+];
+
 const invoices = [
   {
     customer_id: customers[0].id,
@@ -178,6 +185,7 @@ const revenue = [
   { month: 'Oct', revenue: 2800 },
   { month: 'Nov', revenue: 3000 },
   { month: 'Dec', revenue: 4800 },
+  { month: 'Janu', revenue: 2600 },
 ];
 
 module.exports = {
@@ -185,4 +193,5 @@ module.exports = {
   customers,
   invoices,
   revenue,
+  admin,
 };
