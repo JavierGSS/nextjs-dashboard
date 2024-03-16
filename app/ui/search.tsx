@@ -14,11 +14,12 @@ export default function Search({ placeholder }: { placeholder: string }) {
     console.log(`Searching... ${term}`);
     if (term) {
       params.set('query', term);
-      console.log('Params: ', params);
+      console.log('Params: ', params.toString());
     } else {
       params.delete('query');
     }
     replace(`${pathname}?${params.toString()}`);
+    console.log(`${pathname}?${params.toString()}`);
   }, 700);
 
   return (
