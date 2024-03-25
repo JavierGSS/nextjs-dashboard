@@ -26,12 +26,19 @@ export async function createInvoice(formData: FormData) {
       const date = new Date().toISOString().split('T')[0];
       console.log("Invoice created: ", customerId, amount);
 
-      await sql`
+      try {
+        await sql`
         INSERT INTO invoices (customer_id, amount, status, date)
         VALUES (${customerId}, ${amountInCents}, ${status}, ${date})
-      `
-      revalidatePath('/dashboard/invoices');
-      redirect('/dashboard/invoices');
+      `;
+    } catch(error) {
+      return {
+        message: 'DB error: Failed to create invoice'
+      }
+    }
+
+    revalidatePath('/dashboard/invoices');
+    redirect('/dashboard/invoices');
 }
 
 export async function updateInvoice(id: string, formData: FormData) {
