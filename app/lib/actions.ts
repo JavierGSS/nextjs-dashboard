@@ -32,6 +32,7 @@ export type State = {
   };
   message?: string | null;
 };
+
 export async function createInvoice(prevState: State, formData: FormData) {
   // Validate form using Zod
   const validatedFields = CreateInvoice.safeParse({
@@ -129,5 +130,5 @@ export async function authenticate(
     }
     throw error;
   }
-  redirect('/dashboard/invoices');
+  redirect('/dashboard');
 }
