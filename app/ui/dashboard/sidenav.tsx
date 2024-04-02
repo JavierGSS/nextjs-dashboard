@@ -5,6 +5,7 @@ import NavLinks from '@/app/ui/dashboard/nav-links';
 import AcmeLogo from '@/app/ui/acme-logo';
 import { PowerIcon } from '@heroicons/react/24/outline';
 import { signOut } from '@/app/auth';
+import { adios } from '@/app/lib/actions';
 
 export default function SideNav() {
   return (
@@ -22,7 +23,7 @@ export default function SideNav() {
         <div className="hidden h-auto w-full grow rounded-md bg-gray-50 md:block"></div>
         <form
           action={() => {
-            signOut();
+            adios();
             console.log('Logout OK.');
           }}
         >
