@@ -131,18 +131,3 @@ export async function authenticate(
     throw error;
   }
 }
-
-export async function adios() {
-  let success = false;
-  try {
-    await signOut();
-    success = true;
-  } catch (error) {
-     console.log("actions.ts adios() error: ", error);
-     revalidatePath('/dashboard');
-  } finally {
-    if (success) {
-    redirect('/login');
-    }
-  }
-}
