@@ -133,10 +133,16 @@ export async function authenticate(
 }
 
 export async function adios() {
+  let success = false;
   try {
     await signOut();
+    success = true;
   } catch (error) {
-    console.log("actions.ts adios() Error: ", error);
+     console.log("actions.ts adios() error: ", error);
+     revalidatePath('/dashboard');
+  } finally {
+    if (success) {
+    redirect('/login');
+    }
   }
-  redirect('/login');
 }
